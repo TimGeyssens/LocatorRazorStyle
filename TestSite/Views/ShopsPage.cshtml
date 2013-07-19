@@ -318,8 +318,9 @@ function direction(dest,lat,lng){
 	 $('#results').hide();
      $('#dest-direction').val(dest);
 
+     $('#origin-direction').val($('#address').val());
 
-	$('#direction-form').submit(function() {
+     $('#origin-direction').submit(function () {
 	
 	 var ori = $('#origin-direction').val();
 
@@ -352,6 +353,8 @@ function direction(dest,lat,lng){
 	  
     });
 
+   
+  
 }	
 
 function directionBack(){

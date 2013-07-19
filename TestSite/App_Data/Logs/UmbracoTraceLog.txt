@@ -2225,3 +2225,5 @@ Parameter name: startIndex
 2013-07-19 14:55:50,770 [27] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 34] Content 'Holsbeek shop' with Id '1078' has been published.
 2013-07-19 14:59:16,885 [27] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 31] Content 'Shops' with Id '1055' has been published.
 2013-07-19 15:01:25,711 [27] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 20] Content 'Shops' with Id '1055' has been published.
+2013-07-19 15:05:56,161 [27] INFO  Umbraco.Core.Publishing.PublishingStrategy - [Thread 32] Content 'Locator example site' with Id '1053' has been published.
+2013-07-19 15:06:01,491 [27] INFO  umbraco.content - [Thread 36] Loading content from database...
