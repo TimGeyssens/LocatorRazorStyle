@@ -11,5 +11,68 @@ namespace SeekAndDestroy.Umbraco.Installer {
     
     
     public partial class Install {
+        
+        /// <summary>
+        /// Feedback1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.uicontrols.Feedback Feedback1;
+        
+        /// <summary>
+        /// feedback control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.uicontrols.Feedback feedback;
+        
+        /// <summary>
+        /// pnlInstall control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlInstall;
+        
+        /// <summary>
+        /// btnGoogleMapsDataType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGoogleMapsDataType;
+        
+        /// <summary>
+        /// ProgressBar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::umbraco.uicontrols.ProgressBar ProgressBar1;
+        
+        /// <summary>
+        /// docmapper control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::SeekAndDestroy.Umbraco.Controls.DocumentMapperControl docmapper;
+        
+        /// <summary>
+        /// btnGeoCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGeoCode;
     }
 }

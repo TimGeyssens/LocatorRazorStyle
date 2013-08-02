@@ -252,6 +252,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GeoItem.cs" />
     <Compile Include="GeoItemComparer.cs" />
+    <Compile Include="Umbraco\Controls\DocTypePicker.cs" />
+    <Compile Include="Umbraco\Controls\DocumentMapperControl.cs" />
     <Compile Include="Umbraco\Installer\Install.ascx.cs">
       <DependentUpon>Install.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,13 +296,12 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)bin\Locator.*" "$(ProjectDir)..\TestSite\bin\" /Y
+    <PostBuildEvent>xcopy "$(ProjectDir)bin\SeekAndDestroy.*" "$(ProjectDir)..\TestSite\bin\" /Y
 
 
-xcopy "$(ProjectDir)bin\SeekAndDestroy.*" "$(ProjectDir)..\TestSite\bin\" /Y
+xcopy "$(ProjectDir)Umbraco\Installer\*.*" "$(ProjectDir)..\TestSite\App_Plugins\SeekAndDestroy\" /Y
 
-
-xcopy "$(ProjectDir)Umbraco\Installer\*.*" "$(ProjectDir)..\TestSite\App_Plugins\SeekAndDestroy\" /Y</PostBuildEvent>
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
