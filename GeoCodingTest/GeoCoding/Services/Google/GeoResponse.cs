@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
 
-namespace Locator.GeoCoding.Services.Google
+namespace SeekAndDestroy.GeoCoding.Services.Google
 {
     [DataContract]
     public class GeoResponse

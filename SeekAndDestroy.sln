@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locator", "GeoCodingTest\Locator.csproj", "{4572A668-CFAE-4438-AFA0-DACC1B759056}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeekAndDestroy", "GeoCodingTest\SeekAndDestroy.csproj", "{4572A668-CFAE-4438-AFA0-DACC1B759056}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSite", "TestSite\TestSite.csproj", "{9A9DF3FC-C564-4E3F-8C9C-F735DEFADFB1}"
 EndProject

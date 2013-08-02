@@ -28,3 +28,32 @@
 2013-08-02 11:09:17,407 [7] INFO  Umbraco.Core.PluginManager - [Thread 10] Completed resolution of types of umbraco.interfaces.ITree, found 36 (took 28ms)
 2013-08-02 11:10:09,760 [7] INFO  Umbraco.Core.PluginManager - [Thread 9] Starting resolution types of umbraco.interfaces.ICacheRefresher
 2013-08-02 11:10:09,780 [7] INFO  Umbraco.Core.PluginManager - [Thread 9] Completed resolution of types of umbraco.interfaces.ICacheRefresher, found 21 (took 19ms)
+2013-08-02 11:30:56,266 [7] INFO  umbraco.BusinessLogic.Log - [Thread 63] Log scrubbed.  Removed all items older than 2013-06-03 11:30:56
+2013-08-02 11:30:56,267 [7] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 63] Application shutdown. Reason: BinDirChangeOrDirectoryRename
+2013-08-02 11:31:04,742 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Determining hash of code files on disk
+2013-08-02 11:31:04,754 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Hash determined (took 7ms)
+2013-08-02 11:31:04,762 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of umbraco.interfaces.IApplicationStartupHandler
+2013-08-02 11:31:04,909 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of umbraco.interfaces.IApplicationStartupHandler, found 17 (took 146ms)
+2013-08-02 11:31:04,931 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter
+2013-08-02 11:31:04,936 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Core.PropertyEditors.IPropertyEditorValueConverter, found 0 (took 4ms)
+2013-08-02 11:31:04,937 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Web.Mvc.SurfaceController
+2013-08-02 11:31:04,940 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Web.Mvc.SurfaceController, found 0 (took 3ms)
+2013-08-02 11:31:04,940 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Web.WebApi.UmbracoApiController
+2013-08-02 11:31:04,945 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Web.WebApi.UmbracoApiController, found 4 (took 4ms)
+2013-08-02 11:31:04,947 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Core.Media.IThumbnailProvider
+2013-08-02 11:31:04,953 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Core.Media.IThumbnailProvider, found 3 (took 5ms)
+2013-08-02 11:31:04,953 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Starting resolution types of Umbraco.Core.Media.IImageUrlProvider
+2013-08-02 11:31:04,959 [71] INFO  Umbraco.Core.PluginManager - [Thread 57] Completed resolution of types of Umbraco.Core.Media.IImageUrlProvider, found 1 (took 5ms)
+2013-08-02 11:31:05,069 [71] ERROR Umbraco.Core.UmbracoApplicationBase - [Thread 57] An unhandled exception occurred
+System.ArgumentException: A route named 'umbraco-api-LocatorApi' is already in the route collection. Route names must be unique.
+Parameter name: name
+   at System.Web.Routing.RouteCollection.Add(String name, RouteBase item)
+   at System.Web.Http.RouteCollectionExtensions.MapHttpRoute(RouteCollection routes, String name, String routeTemplate, Object defaults, Object constraints, HttpMessageHandler handler)
+   at Umbraco.Web.WebBootManager.RouteLocalApiController(Type controller, String umbracoPath)
+   at Umbraco.Web.WebBootManager.RoutePluginControllers()
+   at Umbraco.Web.WebBootManager.CreateRoutes()
+   at Umbraco.Web.WebBootManager.Complete(Action`1 afterComplete)
+   at Umbraco.Core.UmbracoApplicationBase.StartApplication(Object sender, EventArgs e)
+   at Umbraco.Core.UmbracoApplicationBase.Application_Start(Object sender, EventArgs e)
+2013-08-02 11:31:15,199 [71] INFO  umbraco.BusinessLogic.Log - [Thread 61] Log scrubbed.  Removed all items older than 2013-06-03 11:31:15
+2013-08-02 11:31:15,210 [71] INFO  Umbraco.Core.UmbracoApplicationBase - [Thread 61] Application shutdown. Reason: InitializationError

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Locator
+namespace SeekAndDestroy
 {
     public class GeoItemComparer : IComparer<GeoItem>
     {

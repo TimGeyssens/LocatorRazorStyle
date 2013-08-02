@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Locator.GeoCoding
+namespace SeekAndDestroy.GeoCoding
 {
     public enum DistanceUnits
     {

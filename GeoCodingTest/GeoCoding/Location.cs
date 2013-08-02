@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 
-namespace Locator.GeoCoding
+namespace SeekAndDestroy.GeoCoding
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct Location

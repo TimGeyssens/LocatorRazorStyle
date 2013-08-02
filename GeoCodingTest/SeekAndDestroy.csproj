@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Locator</RootNamespace>
-    <AssemblyName>Locator</AssemblyName>
+    <RootNamespace>SeekAndDestroy</RootNamespace>
+    <AssemblyName>SeekAndDestroy</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -234,6 +234,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Umbraco\Installer\Install.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -251,6 +252,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GeoItem.cs" />
     <Compile Include="GeoItemComparer.cs" />
+    <Compile Include="Umbraco\Installer\Install.ascx.cs">
+      <DependentUpon>Install.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Umbraco\Installer\Install.ascx.designer.cs">
+      <DependentUpon>Install.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Umbraco\LocatorApiController.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
@@ -286,7 +294,13 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)bin\Locator.*" "$(ProjectDir)..\TestSite\bin\" /Y</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(ProjectDir)bin\Locator.*" "$(ProjectDir)..\TestSite\bin\" /Y
+
+
+xcopy "$(ProjectDir)bin\SeekAndDestroy.*" "$(ProjectDir)..\TestSite\bin\" /Y
+
+
+xcopy "$(ProjectDir)Umbraco\Installer\*.*" "$(ProjectDir)..\TestSite\App_Plugins\SeekAndDestroy\" /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

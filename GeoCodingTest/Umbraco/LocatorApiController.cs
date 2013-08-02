@@ -1,5 +1,5 @@
-﻿using Locator.GeoCoding;
-using Locator.GeoCoding.Services.Google;
+﻿using SeekAndDestroy.GeoCoding;
+using SeekAndDestroy.GeoCoding.Services.Google;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -12,7 +12,7 @@ using Umbraco.Core.Models;
 using Umbraco.Web;
 using Umbraco.Web.WebApi;
 
-namespace Locator.Umbraco
+namespace SeekAndDestroy.Umbraco
 {
     public class LocatorApiController : UmbracoApiController
     {

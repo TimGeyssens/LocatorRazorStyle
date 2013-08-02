@@ -5,7 +5,7 @@ using System.Web;
 using System.Net;
 using System.Runtime.Serialization.Json;
 
-namespace Locator.GeoCoding.Services.Google
+namespace SeekAndDestroy.GeoCoding.Services.Google
 {
     public class GoogleGeoCoder
     {

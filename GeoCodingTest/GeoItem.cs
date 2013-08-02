@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Locator.GeoCoding;
+using SeekAndDestroy.GeoCoding;
 using umbraco.MacroEngines;
 
-namespace Locator
+namespace SeekAndDestroy
 {
     public class GeoItem
     {
