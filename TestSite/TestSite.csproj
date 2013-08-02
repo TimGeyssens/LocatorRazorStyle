@@ -253,8 +253,15 @@
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="css\dummy.txt" />
+    <Content Include="css\mobile.css" />
     <Content Include="default.aspx" />
-    <Content Include="images\loading.gif" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\image.png" />
+    <Content Include="img\list-icon.png" />
+    <Content Include="img\loading.gif" />
+    <Content Include="img\marker.png" />
+    <Content Include="img\markershadow.png" />
+    <Content Include="img\shadow.png" />
     <Content Include="macroScripts\dummy.txt" />
     <Content Include="masterpages\dummy.txt" />
     <Content Include="media\dummy.txt" />

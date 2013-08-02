@@ -30,14 +30,14 @@ namespace Locator.Umbraco
             var items = new List<GeoItem>();
             var searchLocation = new Location();
 
-            GeoResponse r = GoogleGeoCoder.CallGeoWS(address);
+            var r = GoogleGeoCoder.CallGeoWS(address);
 
             searchLocation = new Location(r.Results[0].Geometry.Location.Lat, r.Results[0].Geometry.Location.Lng);
 
 
             foreach (var node in nodesToSearchThrough) {
                          
-              Location itemLocation = new Location(
+              var itemLocation = new Location(
                     Convert.ToDouble(node.GetProperty(locationPropAlias).Value.ToString().Split(',')[0], Utility.NumberFormatInfo),
                     Convert.ToDouble(node.GetProperty(locationPropAlias).Value.ToString().Split(',')[1], Utility.NumberFormatInfo));  
               

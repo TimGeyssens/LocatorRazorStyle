@@ -313,14 +313,14 @@ function streetView(lat,lng){
 
 }	
 function direction(dest,lat,lng){
-
+     
 	 $('#direction').show();
 	 $('#results').hide();
      $('#dest-direction').val(dest);
 
      $('#origin-direction').val($('#address').val());
 
-     $('#origin-direction').submit(function () {
+     $('#direction-form').submit(function () {
 	
 	 var ori = $('#origin-direction').val();
 
@@ -353,7 +353,7 @@ function direction(dest,lat,lng){
 	  
     });
 
-   
+   $('#direction-form').trigger('submit');
   
 }	
 
@@ -444,8 +444,8 @@ function resetDirection(){
 					    </form>
 						
 					  <div id="direction">
-					  <h2 class="title-bg" style="padding-bottom:10px !important; ">Directions</h2>
-					  <form method="post" id="direction-form">
+					  <h2 class="title-bg" style="padding-bottom:10px !important; ">Directions <a href="javascript:directionBack()">Back</a></h2>
+					  <form method="post" id="direction-form" style="display:none">
 					  
 					  <p>
 					  <table><tr>

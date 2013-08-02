@@ -698,8 +698,11 @@ padding-left:2px;
 
 max-width:100%;
 line-height:20px;
+border-bottom:none;
 }
-
+#direction h2 a {
+    font-size:12px;
+}
 /* @end */
 
 
