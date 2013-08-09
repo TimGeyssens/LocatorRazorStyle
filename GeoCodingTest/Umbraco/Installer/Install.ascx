@@ -4,12 +4,13 @@
 
 <div style="padding: 10px 10px 0;">
      
- <umb:feedback ID="Feedback1" runat="server" type="success" text="Seek and Destroy successfully installed!" />
+ <umb:feedback ID="Feedback1" runat="server" type="success" text="Seek and Destroy successfully installed!" Visible="false"/>
+     <img src="/App_Plugins/SeekAndDestroy/SeekAndDestroyLogo.png" alt="Seek And Destroy" width="150" style="float:right"/>
 
-     <h1 style="margin-top: 10px;">Google maps datatype and Geocode content</h1>
+     <h1 style="margin-top: 10px;">Seek And Destroy</h1>
     <umb:feedback id="feedback" runat="server" />
         <asp:panel id="pnlInstall" runat="server">
-        <p>Now that you have <strong>Seek and destroy</strong> installed, you can also need the google maps datatype and geocode some of your content.</p>
+        <p>Now that you have <strong>Seek and destroy</strong> installed, you can also install the google maps datatype and geocode some of your content.</p>
     	<h2>Install google maps datatype</h2>
     	<p>To install the datatype, simply hit the button.</p>
         <asp:Button ID="btnGoogleMapsDataType" runat="server" Text="Install" OnClick="btnGoogleMapsDataType_Click" onclientclick="jQuery(this).hide(); jQuery('#installingMessage').show(); return true;"/>

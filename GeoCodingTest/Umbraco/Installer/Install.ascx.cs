@@ -26,35 +26,65 @@ namespace SeekAndDestroy.Umbraco.Installer
 
         protected void btnGeoCode_Click(object sender, EventArgs e)
         {
-            int docType = 0;
-            if(int.TryParse(docmapper.SelectedDocType, out docType))
-            {
-              string docTypeAlias = Services.ContentTypeService.GetAllContentTypes().Where(ct => ct.Id == docType).FirstOrDefault().Alias;
+            IList<string> successList = new List<string>();
+            IList<string> failedList = new List<string>();
 
-            UmbracoHelper help = new UmbracoHelper(UmbracoContext);
-
-            foreach (var node in help.TypedContentAtRoot().First().Descendants(docTypeAlias))
+            try
             {
-                //geocode
-                var address = string.Empty;
-                foreach (var alias in docmapper.SelectedAddressProperties.Split(','))
+
+                int docType = 0;
+                if (int.TryParse(docmapper.SelectedDocType, out docType))
                 {
-                    if(alias != string.Empty)
-                        address += node.GetPropertyValue<string>(alias);
+                    string docTypeAlias = Services.ContentTypeService.GetAllContentTypes().Where(ct => ct.Id == docType).FirstOrDefault().Alias;
+
+                    UmbracoHelper help = new UmbracoHelper(UmbracoContext);
+
+                    foreach (var node in help.TypedContentAtRoot().First().Descendants(docTypeAlias))
+                    {
+                        //geocode
+                        var address = string.Empty;
+                        foreach (var alias in docmapper.SelectedAddressProperties.Split(','))
+                        {
+                            if (alias != string.Empty)
+                                address += node.GetPropertyValue<string>(alias);
+                        }
+
+                        var r = GoogleGeoCoder.CallGeoWS(address);
+
+                        if (r.Results.Any())
+                        {
+                            var cs = Services.ContentService;
+                            var content = cs.GetById(node.Id);
+
+                            content.SetValue(docmapper.SelectedLocationProperty, r.Results[0].Geometry.Location.Lat.ToString(Utility.NumberFormatInfo) + "," + r.Results[0].Geometry.Location.Lng.ToString(Utility.NumberFormatInfo) + ",13");
+                            cs.SaveAndPublish(content);
+                        }
+                    }
+
+
+                    successList.Add("Content geocoded");
                 }
 
-                var r = GoogleGeoCoder.CallGeoWS(address);
-
-                if (r.Results.Any())
-                {
-                    var cs = Services.ContentService;
-                    var content = cs.GetById(node.Id);
-
-                    content.SetValue(docmapper.SelectedLocationProperty, r.Results[0].Geometry.Location.Lat.ToString(Utility.NumberFormatInfo) + "," + r.Results[0].Geometry.Location.Lng.ToString(Utility.NumberFormatInfo));
-                    cs.SaveAndPublish(content);
-                }
+            }
+            catch (Exception)
+            {
+                // Append package to failed list
+                failedList.Add("Failed to geocode content");
             }
 
+           
+            // Show message
+            if (successList.Count > 0)
+            {
+                //Successfull
+                feedback.type = umbraco.uicontrols.Feedback.feedbacktype.success;
+                feedback.Text = string.Format("{0} installed successfully", successList.First());
+            }
+            else
+            {
+                //Failed
+                feedback.type = umbraco.uicontrols.Feedback.feedbacktype.error;
+                feedback.Text = string.Format("{0} failed to install", successList.First());
             }
         }
         protected void btnGoogleMapsDataType_Click(object sender, EventArgs e)
