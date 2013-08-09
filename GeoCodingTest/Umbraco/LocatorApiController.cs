@@ -22,8 +22,7 @@ namespace SeekAndDestroy.Umbraco
             UmbracoHelper help = new UmbracoHelper(UmbracoContext);
 
             var nodesToSearchThrough = help.TypedContent(parentId)
-                .Children
-                .Where(c => c.DocumentTypeId == docTypeFilter).Where("Visible");
+                .Descendants().Where(c => c.DocumentTypeId == docTypeFilter).Where("Visible");
 
             var distanceunit = DistanceUnits.Kilometers;
 
