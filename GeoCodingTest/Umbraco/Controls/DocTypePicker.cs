@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+
 namespace SeekAndDestroy.Umbraco.Controls
 {
+
     public class DocTypePicker
     {
         public Guid ObjectGuid {

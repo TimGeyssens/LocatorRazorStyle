@@ -21,7 +21,78 @@ namespace SeekAndDestroy.Umbraco.Installer
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                List<KeyValuePair<String, String>> items = new List<KeyValuePair<String, String>>();
 
+               
+                Guid[] guids = umbraco.cms.businesslogic.CMSNode.getAllUniquesFromObjectType(new Guid("a2cb7800-f571-4787-9638-bc48539a0efb"));
+                foreach (Guid g in guids)
+                {
+                    umbraco.cms.businesslogic.CMSNode node = new umbraco.cms.businesslogic.CMSNode(g);
+                    items.Add(new KeyValuePair<string, string>(node.Id.ToString(), node.Text));
+                }
+                
+
+                items.Sort(delegate(KeyValuePair<String, String> x, KeyValuePair<String, String> y) { return x.Value.CompareTo(y.Value); });
+
+                foreach (KeyValuePair<String, String> kv in items)
+                {
+                    ddDocType.Items.Add(new System.Web.UI.WebControls.ListItem(kv.Value, kv.Key));
+                }
+
+                System.Web.UI.WebControls.ListItem li = new System.Web.UI.WebControls.ListItem("Choose...", "");
+                li.Selected = true;
+                ddDocType.Items.Insert(0, li);
+
+            }
+        }
+
+        protected void btnAddProperty_Click(object sender, EventArgs e)
+        {
+            IList<string> successList = new List<string>();
+            IList<string> failedList = new List<string>();
+
+            try
+            {
+                int docType = 0;
+                if (int.TryParse(ddDocType.SelectedValue, out docType))
+                {
+                    var ct = Services.ContentTypeService.GetContentType(docType);
+                    if (Services.DataTypeService.GetAllDataTypes().Any(x => x.DataTypeName == "Google Map"))
+                    {
+                        var id = Services.DataTypeService.GetAllDataTypeDefinitions().Single(x => x.Name == "Google Map");
+                        var t = new PropertyType(id);
+                        t.Alias = txtPropertyAlias.Text;
+                        t.Name = txtPropertyAlias.Text;
+                        ct.AddPropertyType(t);
+                        Services.ContentTypeService.Save(ct);
+
+                        successList.Add("Adding property");
+                    }
+                }
+
+              
+            }
+            catch (Exception)
+            {
+                // Append package to failed list
+                failedList.Add("Failed to add google maps property");
+            }
+
+            // Show message
+            if (successList.Count > 0)
+            {
+                //Successfull
+                feedback.type = umbraco.uicontrols.Feedback.feedbacktype.success;
+                feedback.Text = string.Format("{0} successful", successList.First());
+            }
+            else
+            {
+                //Failed
+                feedback.type = umbraco.uicontrols.Feedback.feedbacktype.error;
+                feedback.Text = failedList.First();
+            }
         }
 
         protected void btnGeoCode_Click(object sender, EventArgs e)
@@ -78,13 +149,13 @@ namespace SeekAndDestroy.Umbraco.Installer
             {
                 //Successfull
                 feedback.type = umbraco.uicontrols.Feedback.feedbacktype.success;
-                feedback.Text = string.Format("{0} successfully", successList.First());
+                feedback.Text = string.Format("{0} successful", successList.First());
             }
             else
             {
                 //Failed
                 feedback.type = umbraco.uicontrols.Feedback.feedbacktype.error;
-                feedback.Text = string.Format("{0} failed", successList.First());
+                feedback.Text = failedList.First();
             }
         }
         protected void btnGoogleMapsDataType_Click(object sender, EventArgs e)

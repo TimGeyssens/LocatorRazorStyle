@@ -22,6 +22,24 @@
                 <em>&nbsp; &nbsp;Installing google maps datatype, please wait...</em><br />
             </div>
         </p>
+
+            <h2>Add google maps property to a doctype</h2>
+            <h4>Document type</h4>
+            <asp:DropDownList ID="ddDocType" runat="server"></asp:DropDownList>
+            <h4>New property alias</h4>
+            <asp:TextBox ID="txtPropertyAlias" runat="server"></asp:TextBox>
+            <br />
+             <asp:Button ID="btnAddProperty" runat="server" Text="Add property" OnClick="btnAddProperty_Click" onclientclick="jQuery(this).hide(); jQuery('#addingPropertyMessage').show(); return true;"/>
+            <p>
+           
+                <div style="display: none;" id="addingPropertyMessage">
+                    <umb:ProgressBar ID="ProgressBar3" runat="server" />
+                    <br />
+                    <em>&nbsp; &nbsp;Adding property, please wait...</em><br />
+                </div>
+            </p>
+
+
             <h2>Geo code documents</h2>
             <h4>Type of documents to geocode</h4>
             <sak:DocumentMapperControl runat="server" ID="docmapper"></sak:DocumentMapperControl>
