@@ -17,13 +17,13 @@ namespace SeekAndDestroy.Umbraco
     public class LocatorApiController : UmbracoApiController
     {
 
-        public IEnumerable<ExpandoObject> GetNearest(string address, int parentId, string docTypeFilter, string locationPropAlias, int numberOfSearchResults)
+        public IEnumerable<ExpandoObject> GetNearest(string address, int parentId, int docTypeFilter, string locationPropAlias, int numberOfSearchResults)
         {
             UmbracoHelper help = new UmbracoHelper(UmbracoContext);
 
             var nodesToSearchThrough = help.TypedContent(parentId)
                 .Children
-                .Where(c => c.DocumentTypeAlias == docTypeFilter).Where("Visible");
+                .Where(c => c.DocumentTypeId == docTypeFilter).Where("Visible");
 
             var distanceunit = DistanceUnits.Kilometers;
 
