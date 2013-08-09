@@ -62,7 +62,7 @@ namespace SeekAndDestroy.Umbraco.Installer
                     }
 
 
-                    successList.Add("Content geocoded");
+                    successList.Add("Content geocoding");
                 }
 
             }
@@ -78,13 +78,13 @@ namespace SeekAndDestroy.Umbraco.Installer
             {
                 //Successfull
                 feedback.type = umbraco.uicontrols.Feedback.feedbacktype.success;
-                feedback.Text = string.Format("{0} installed successfully", successList.First());
+                feedback.Text = string.Format("{0} successfully", successList.First());
             }
             else
             {
                 //Failed
                 feedback.type = umbraco.uicontrols.Feedback.feedbacktype.error;
-                feedback.Text = string.Format("{0} failed to install", successList.First());
+                feedback.Text = string.Format("{0} failed", successList.First());
             }
         }
         protected void btnGoogleMapsDataType_Click(object sender, EventArgs e)

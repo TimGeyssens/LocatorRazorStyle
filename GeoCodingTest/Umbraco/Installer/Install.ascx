@@ -25,7 +25,15 @@
             <h2>Geo code documents</h2>
             <h4>Type of documents to geocode</h4>
             <sak:DocumentMapperControl runat="server" ID="docmapper"></sak:DocumentMapperControl>
-            <asp:Button ID="btnGeoCode" runat="server" Text="GeoCode" OnClick="btnGeoCode_Click" onclientclick="jQuery(this).hide(); jQuery('#installingMessage').show(); return true;"/>
+            <asp:Button ID="btnGeoCode" runat="server" Text="GeoCode" OnClick="btnGeoCode_Click" onclientclick="jQuery(this).hide(); jQuery('#geoCodeMessage').show(); return true;"/>
+             <p>
+           
+            <div style="display: none;" id="geoCodeMessage">
+                <umb:ProgressBar ID="ProgressBar2" runat="server" />
+                <br />
+                <em>&nbsp; &nbsp;Geocoding content, please wait...</em><br />
+            </div>
+        </p>
     </asp:panel> 
 
 
